@@ -81,9 +81,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 	end,
 })
-
 local caps = require("cmp_nvim_lsp").default_capabilities()
-
 vim.lsp.config['luals'] = {
 	cmd = { 'lua-language-server' },
 	filetypes = { 'lua' },
@@ -208,40 +206,11 @@ vim.lsp.config['clangd'] = {
 	-- },
 }
 
-vim.lsp.config['c3lsp'] = {
-	cmd = { 'c3-lsp' },
-	filetypes = { 'c3' },
-	root_markers = { 'project.json', '.git' },
-	capabilities = caps,
-}
-
-vim.lsp.config['serve_d'] = {
-	cmd = { 'serve-d' },
-	filetypes = { 'd' },
-	root_markers = { 'dub.sdl', 'dub.json', '.git' },
-	capabilities = caps,
-}
-
 vim.lsp.config['jsonls'] = {
 	cmd = { 'vscode-json-languageserver', '--stdio' },
 	filetypes = { 'json', 'jsonc' },
 	root_markers = { 'package.json', '.git', 'config.jsonc' },
 	capabilities = caps,
-}
-
-vim.lsp.config['hls'] = {
-	cmd = { 'haskell-language-server-wrapper', '--lsp' },
-	filetypes = { 'haskell', 'lhaskell' },
-	root_markers = { 'stack.yaml', 'cabal.project', 'package.yaml', '*.cabal', 'hie.yaml', '.git' },
-	capabilities = caps,
-	settings = {
-		haskell = {
-			formattingProvider = 'fourmolu',
-			plugin = {
-				semanticTokens = { globalOn = false }
-			},
-		},
-	},
 }
 
 vim.lsp.config['gopls'] = {
@@ -261,19 +230,9 @@ vim.lsp.config['gopls'] = {
 	},
 }
 
-vim.lsp.config['templ'] = {
-	cmd = { 'templ', 'lsp' },
-	filetypes = { 'templ' },
-	root_markers = { 'go.mod', '.git' },
-	capabilities = caps,
-}
-
 vim.filetype.add({
 	extension = {
 		h = 'c',
-		c3 = 'c3',
-		d = 'd',
-		templ = 'templ',
 	},
 })
 
