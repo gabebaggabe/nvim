@@ -7,7 +7,7 @@ local options = {
 
 	-- numbers
 	number = true,
-	relative = true,
+	relativenumber = true,
 
 	-- indenting stuff
 	smarttab = true,
